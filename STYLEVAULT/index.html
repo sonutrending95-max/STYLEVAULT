@@ -1,0 +1,306 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>STYLEVAULT | Premium Fashion</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Announcement Bar -->
+    <div class="announcement">
+        FREE SHIPPING ON ORDERS OVER ₹999
+    </div>
+
+    <!-- Navbar -->
+    <header class="navbar">
+
+        <div class="logo">STYLE<span>VAULT</span></div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#products">Shop</a>
+            <a href="#categories">Categories</a>
+            <a href="#about">About</a>
+        </nav>
+
+        <div class="nav-actions">
+            <button id="searchBtn">⌕</button>
+            <button id="wishlistBtn">♡</button>
+            <button id="cartBtn">Bag <span id="cartCount">0</span></button>
+        </div>
+
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+            <p class="small-heading">NEW COLLECTION 2026</p>
+
+            <h1>STYLE THAT<br> SPEAKS <span>YOU.</span></h1>
+
+            <p class="hero-text">
+                Discover your next favorite look.
+                Premium fashion made for everyday confidence.
+            </p>
+
+            <a href="#products" class="shop-btn">SHOP COLLECTION ↗</a>
+        </div>
+
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=1000&q=85" alt="Fashion model wearing modern outfit">
+        </div>
+
+        <div class="hero-number">01 / 04</div>
+
+    </section>
+
+    <!-- Categories -->
+    <section class="categories" id="categories">
+
+        <div class="section-heading">
+            <div>
+                <p class="small-heading">EXPLORE</p>
+                <h2>Shop by Category</h2>
+            </div>
+        </div>
+
+        <div class="category-grid">
+
+            <a href="#products" class="category-card">
+                <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=600&q=80" alt="T-shirts">
+                <span>Clothing ↗</span>
+            </a>
+
+            <a href="#products" class="category-card">
+                <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80" alt="Sneakers">
+                <span>Sneakers ↗</span>
+            </a>
+
+            <a href="#products" class="category-card">
+                <img src="https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=600&q=80" alt="Watches">
+                <span>Watches ↗</span>
+            </a>
+
+            <a href="#products" class="category-card">
+                <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=600&q=80" alt="Accessories">
+                <span>Accessories ↗</span>
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- Products -->
+    <section class="products" id="products">
+
+        <div class="section-heading">
+            <div>
+                <p class="small-heading">CURATED FOR YOU</p>
+                <h2>Trending Products</h2>
+            </div>
+
+            <a href="#products" class="view-all">VIEW ALL ↗</a>
+        </div>
+
+<div class="shop-controls">
+
+    <input
+        type="search"
+        id="productSearch"
+        placeholder="Search clothing, shoes, watches..."
+    >
+
+    <select id="categoryFilter">
+        <option value="All">All Categories</option>
+        <option value="Clothing">Clothing</option>
+        <option value="Shoes">Shoes</option>
+        <option value="Watches">Watches</option>
+        <option value="Accessories">Accessories</option>
+    </select>
+
+    <select id="sortProducts">
+        <option value="default">Sort: Featured</option>
+        <option value="low">Price: Low to High</option>
+        <option value="high">Price: High to Low</option>
+        <option value="name">Name: A to Z</option>
+    </select>
+
+</div>
+
+
+        <div class="product-grid" id="productGrid">
+
+            <!-- Products JavaScript se aayenge -->
+
+        </div>
+
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter" id="about">
+        <p class="small-heading">JOIN THE STYLE CLUB</p>
+        <h2>Good Style.<br>Great Stories.</h2>
+        <p>Get updates on new collections and exclusive offers.</p>
+
+        <form id="newsletterForm">
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit">JOIN ↗</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="logo">STYLE<span>VAULT</span></div>
+        <p>© 2026 STYLEVAULT. All rights reserved.</p>
+    </footer>
+
+    <!-- Cart Panel -->
+    <div class="cart-overlay" id="cartOverlay">
+        <div class="cart-panel">
+
+            <div class="cart-header">
+                <h2>Shopping Bag</h2>
+                <button id="closeCart">✕</button>
+            </div>
+
+            <div id="cartItems">
+                <p class="empty-cart">Your bag is empty.</p>
+            </div>
+
+            <div class="cart-footer">
+                <h3>Total: <span id="cartTotal">₹0</span></h3>
+                <button id="checkoutBtn">CHECKOUT →</button>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- Product Details Popup -->
+<div class="product-modal" id="productModal">
+  <div class="product-modal-content">
+    <button class="modal-close" id="modalClose" aria-label="Close">
+      &times;
+    </button>
+
+    <img id="modalProductImage" src="" alt="Product image">
+
+    <div class="modal-product-info">
+      <p id="modalProductCategory"></p>
+      <h2 id="modalProductName"></h2>
+      <h3 id="modalProductPrice"></h3>
+
+      <p id="modalProductDescription">
+        Stylish and comfortable. Perfect for everyday use.
+      </p>
+
+      <button id="modalAddToCart" class="modal-add-btn">
+        Add to Cart
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Checkout Page -->
+<div class="checkout-overlay" id="checkoutOverlay">
+
+    <div class="checkout-box">
+
+        <div class="checkout-header">
+            <h2>Checkout</h2>
+            <button id="closeCheckout">✕</button>
+        </div>
+
+        <form id="checkoutForm">
+
+            <label for="customerName">Full Name</label>
+            <input
+                type="text"
+                id="customerName"
+                placeholder="Enter your full name"
+                required
+            >
+
+            <label for="customerPhone">Mobile Number</label>
+            <input
+                type="tel"
+                id="customerPhone"
+                placeholder="Enter 10 digit mobile number"
+                pattern="[0-9]{10}"
+                maxlength="10"
+                required
+            >
+
+            <label for="customerAddress">Delivery Address</label>
+            <textarea
+                id="customerAddress"
+                placeholder="House no, street, area, city, pincode"
+                rows="4"
+                required
+            ></textarea>
+
+            <div class="checkout-summary">
+                <h3>Order Total: <span id="checkoutTotal">₹0</span></h3>
+            </div>
+
+            <button type="submit" id="placeOrderBtn">
+                PLACE ORDER
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+<!-- Order Success Page -->
+<div class="order-success-overlay" id="orderSuccessOverlay">
+
+    <div class="order-success-box">
+
+        <div class="success-icon">✓</div>
+
+        <h2>Order Placed Successfully!</h2>
+
+        <p>Thank you for shopping with us.</p>
+
+        <p>Your order has been received.</p>
+        <p>
+    Order ID: <strong id="successOrderId">---</strong>
+</p>
+<!-- Ordered Products -->
+<div class="success-order-items">
+    <h3>Order Summary</h3>
+    <div id="successOrderItems"></div>
+</div>
+
+        <div class="success-order-total">
+            Order Total: <span id="successOrderTotal">₹0</span>
+        </div>
+
+        <button id="continueShoppingBtn">
+            CONTINUE SHOPPING
+        </button>
+
+    </div>
+
+</div>
+
+
+
+ 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase.js"></script>   
+<script src="script.js"></script>
+
+</body>
+</html>
